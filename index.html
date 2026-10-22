@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111827;
+    }
+
+    header h2 {
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 60px);
+    }
+
+    .hero span {
+      color: #38bdf8;
+    }
+
+    p {
+      color: #cbd5e1;
+      margin: 15px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      background: #38bdf8;
+      color: #0f172a;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 25px;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #111827;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 6px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h2>MyPortfolio</h2>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Hello, I'm <span>Your Name</span></h1>
+    <h2>Web Developer</h2>
+    <p>I create modern and responsive websites.</p>
+    <a class="btn" href="#projects">View My Work</a>
+  </section>
+
+  <section id="about">
+    <h1>About Me</h1>
+    <p>
+      I'm a passionate developer who enjoys building
+      websites using HTML, CSS and JavaScript.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h1>My Projects</h1>
+
+    <div class="card">
+      <h2>Portfolio Website</h2>
+      <p>A personal website showcasing my skills and work.</p>
+    </div>
+
+    <div class="card">
+      <h2>Landing Page</h2>
+      <p>A modern and responsive website design.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h1>Contact Me</h1>
+    <p>Email: yourname@example.com</p>
+    <a class="btn" href="mailto:yourname@example.com">
+      Send Email
+    </a>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Your Name. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        console.log("Navigating to " + link.hash);
+      });
+    });
+  </script>
+</body>
+</html>
